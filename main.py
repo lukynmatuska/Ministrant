@@ -38,6 +38,8 @@ async def on_message(message):
     print(f"message: {message}")
     if "Ari" in message.author.name or "ari" in message.content.lower():
         await message.reply("<@282207827332694017> ty jsi vůl!")
+    if message.author.id != bot.user.id and "uh oh" in message.content.lower():
+        await message.reply("uh oh")
 
 @bot.command(description="Unmutes a specified user.")
 # @commands.has_permissions(manage_messages=True)
