@@ -1,4 +1,4 @@
-import disnake
+from disnake import ApplicationCommandInteraction
 from disnake.ext import commands
 
 
@@ -9,9 +9,9 @@ class PingCommand(commands.Cog):
         self.bot = bot
 
     @commands.slash_command()
-    async def ping(self, inter: disnake.ApplicationCommandInteraction):
+    async def ping(self, inter: ApplicationCommandInteraction):
         """Get the bot's current websocket latency."""
-        await inter.response.send_message(f"Pong! {round(self.bot.latency * 1000)}ms")
+        await inter.response.send_message(f"Pong! {round(self.bot.latency * 1000)}ms :ping_pong:")
 
 
 def setup(bot: commands.Bot):
