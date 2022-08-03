@@ -1,10 +1,11 @@
 # Import the necessary libraries.
-from disnake import Message
+from disnake import Message, ApplicationCommandInteraction
 from disnake.ext import commands
 
 # Setup global variables
 fest_counter = 0
 FEST_STRING = "fest"
+# FEST_COUNTED_STRING = f"Pocet pouziti \"{FEST_STRING}\" od meho spusteni je {fest_counter}."
 ARII_DISCORD_ID = 282207827332694017
 ARII_SLEEPING_IMAGE = "../assets/sleepingAri.png"
 OVERSLEEP_WORD = "zaspal"
@@ -34,11 +35,13 @@ class Arii(commands.Cog):
             await message.reply(FEST_STRING)
             fest_counter += 1
     
-    # When somebody use /uhoh command, run this code.
-    @commands.command(brief="Messages.uhoh_brief")
-    async def fest(self, ctx):
-        global uhoh_counter
-        await ctx.reply(f"Počet použití slova \"fest\" od spuštění je {fest_counter}.")
+    # When somebody use /fest command, run this code.
+    @commands.slash_command()
+    async def fest(self, inter: ApplicationCommandInteraction):
+        # Use global variables
+        global fest_counter
+        await inter.response.defer()
+        await inter.followup.send(f"Pocet pouziti \"{FEST_STRING}\" od meho spusteni je {fest_counter}.")
 
 def setup(bot: commands.Bot):
     bot.add_cog(Arii(bot))
