@@ -14,8 +14,9 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 
-# Getting .env value.
+# Getting .env values
 load_dotenv()
+DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 # Creating a commands.Bot() instance, and assigning it to "bot"
 bot = commands.Bot(
@@ -40,6 +41,4 @@ bot.load_extension("cogs.uhoh")
 bot.load_extension("cogs.arii")
 
 # Login to Discord with the bot's token.
-#bot.run(DISCORD_BOT_TOKEN)
-bot.run("MTAwNDEyNjQyNDM1NTA2NTg4Ng.GUCzyN.xar690ZPR7ya8uzESva-porBkBPp7-Z23if9oo")
-
+bot.run(DISCORD_BOT_TOKEN)
