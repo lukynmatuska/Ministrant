@@ -36,7 +36,9 @@ class Arii(commands.Cog):
             fest_counter += 1
     
     # When somebody use /fest command, run this code.
-    @commands.slash_command()
+    @commands.slash_command(
+            description = f"Vraci pocet pouziti \"{FEST_STRING}\" od spusteni."
+    )
     async def fest(self, inter: ApplicationCommandInteraction):
         # Use global variables
         global fest_counter
