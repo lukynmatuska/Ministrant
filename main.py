@@ -39,6 +39,7 @@ async def on_ready():
 bot.load_extension("cogs.ping") # Note: We did not append the .py extension.
 bot.load_extension("cogs.uhoh")
 bot.load_extension("cogs.arii")
+bot.load_extension("cogs.praying")
 
 # Login to Discord with the bot's token.
 bot.run(DISCORD_BOT_TOKEN)
