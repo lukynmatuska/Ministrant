@@ -1,5 +1,5 @@
 # Import the necessary libraries.
-from disnake import Message, ApplicationCommandInteraction
+from disnake import ApplicationCommandInteraction, File, Message
 from disnake.ext import commands
 
 # Setup global variables
@@ -7,7 +7,7 @@ fest_counter = 0
 FEST_STRING = "fest"
 # FEST_COUNTED_STRING = f"Pocet pouziti \"{FEST_STRING}\" od meho spusteni je {fest_counter}."
 ARII_DISCORD_ID = 282207827332694017
-ARII_SLEEPING_IMAGE = "../assets/sleepingAri.png"
+ARII_SLEEPING_IMAGE = "./assets/sleepingAri.png"
 OVERSLEEP_WORD = "zaspal"
 
 class Arii(commands.Cog):
