@@ -1,2 +1,4 @@
 disnake>=2.5.1
 python-dotenv
+asyncio
+youtube_dl
