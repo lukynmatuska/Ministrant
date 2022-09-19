@@ -6,7 +6,7 @@ from disnake.ext import commands
 
 #global vars
 
-ACTIVATION_STRINGS = ["zavoláme dejva","zavolame dejva","zavoláme na to dejva","zavolame na to dejva","na to zavolame dejva"]
+ACTIVATION_STRINGS = ["zavoláme dejva","zavolame dejva","zavoláme na to dejva","zavolame na to dejva","na to zavolame dejva","hej, dejve!","dejve, pojd to opravit"]
 DEJV_IMAGE_ROUTE = "./assets/dejvOpravar.png"
 DEJV_REPAIR_STRINGS = ["Přicházá Dejv a jde to opravit", "Zde jde Dave, naše spása", "Uhněte z cesty, přichází Dejv","Znáte Dejva, všechno spraví!"]
 
