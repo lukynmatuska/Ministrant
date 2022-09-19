@@ -4,7 +4,6 @@ import logging
 from disnake import Embed, TextChannel, AllowedMentions, Intents, Game, Member, File, Message, TextInputStyle, ui, ModalInteraction, AppCmdInter
 from disnake.ext import commands
 import os
-from os.path import isfile
 from dotenv import load_dotenv
 
 # Setup logging
@@ -37,18 +36,11 @@ async def on_ready():
     print("The bot is ready!")
 
 # Load extenesions
-for name in os.listdir("./cogs"):
-    filename = f"./cogs/{name}"
-    modulename = f"cogs.{name}"
-
-    if isfile(filename) and filename.endswith(".py"):
-        bot.load_extension(modulename[:-3])
-
-"""bot.load_extension("cogs.ping") # Note: We did not append the .py extension.
+bot.load_extension("cogs.ping") # Note: We did not append the .py extension.
 bot.load_extension("cogs.uhoh")
 bot.load_extension("cogs.arii")
 bot.load_extension("cogs.praying")
-bot.load_extension("cogs.dejv")"""
+bot.load_extension("cogs.dejv")
 
 # Login to Discord with the bot's token.
 bot.run(DISCORD_BOT_TOKEN)
