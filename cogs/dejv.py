@@ -1,11 +1,8 @@
-#importing libs
-
 from random import randint, random
 from disnake import ApplicationCommandInteraction, File, Message
 from disnake.ext import commands
 
-#global vars
-
+#will maybe be seperated into a file later when i feel like it
 ACTIVATION_STRINGS = ["zavoláme dejva","zavolame dejva","zavoláme na to dejva","zavolame na to dejva","na to zavolame dejva","hej, dejve!","dejve, pojd to opravit"]
 DEJV_IMAGE_ROUTE = "./assets/dejvOpravar.png"
 DEJV_REPAIR_STRINGS = ["Přicházá Dejv a jde to opravit", "Zde jde Dave, naše spása", "Uhněte z cesty, přichází Dejv","Znáte Dejva, všechno spraví!"]
@@ -33,6 +30,7 @@ class Dejv(commands.Cog):
                         fp = f,
                     )
                 )
+
 
 def setup(bot: commands.Bot):
     bot.add_cog(Dejv(bot))
