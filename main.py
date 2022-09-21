@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-# Import the necessary libraries.
 import logging
 from disnake import Intents, Game
 from disnake.ext import commands
@@ -24,7 +22,6 @@ bot = commands.Bot(
     command_prefix=";",
     intents=Intents.all(),
     activity=Game(name="Modlení"),
-    sync_commands_debug=True,
     test_guilds=[828675132365078618],
 )
 
