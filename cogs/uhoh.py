@@ -1,9 +1,9 @@
-# Import the necessary libraries.
 from disnake import Message
 from disnake.ext import commands
+from config.messages import Messages
 
-# Setup global variables
 uhoh_counter = 0
+
 
 class UhOh(commands.Cog):
     def __init__(self, bot: commands.Bot):
@@ -14,17 +14,22 @@ class UhOh(commands.Cog):
     async def on_message(self, message: Message):
         global uhoh_counter
 
-        if message.author.id != self.bot.user.id and "uh oh" in message.content.lower() and not message.author.bot:
+        if (
+            message.author.id != self.bot.user.id
+            and "uh oh" in message.content.lower()
+            and not message.author.bot
+        ):
             await message.reply("uh oh")
-        #elif config.uhoh_string in message.content.lower():
+        # elif config.uhoh_string in message.content.lower():
         #    await message.channel.send("uh oh")
             uhoh_counter += 1
-    
+
     # When somebody use /uhoh command, run this code.
-    @commands.command(brief="Messages.uhoh_brief")
+    @commands.command(description=Messages.uhoh_brief)
     async def uhoh(self, ctx):
         global uhoh_counter
         await ctx.reply(f"Pocet uh oh od spusteni je {uhoh_counter}")
+
 
 def setup(bot: commands.Bot):
     bot.add_cog(UhOh(bot))
