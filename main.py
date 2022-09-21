@@ -16,14 +16,12 @@ logger.addHandler(handler)
 
 
 # Getting .env values
-load_dotenv()
+load_dotenv(dotenv_path="./config/.env")
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 # Creating a commands.Bot() instance, and assigning it to "bot"
 bot = commands.Bot(
     command_prefix=";",
-    # help_command = None,
-    # allowed_mentions = AllowedMentions(roles = False, everyone = False, users = True),
     intents=Intents.all(),
     activity=Game(name="Modlení"),
     sync_commands_debug=True,
