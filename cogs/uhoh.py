@@ -9,22 +9,21 @@ class UhOh(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    # When the bot receive some message, run this code.
     @commands.Cog.listener()
     async def on_message(self, message: Message):
+        """
+        Send "uh oh" when someone sends message containing "uh oh"
+        """
+
         global uhoh_counter
 
-        if (
-            message.author.id != self.bot.user.id
-            and "uh oh" in message.content.lower()
-            and not message.author.bot
-        ):
+        if message.author.bot:
+            return
+
+        if message.author.id != self.bot.user.id and "uh oh" in message.content.lower():
             await message.reply("uh oh")
-        # elif config.uhoh_string in message.content.lower():
-        #    await message.channel.send("uh oh")
             uhoh_counter += 1
 
-    # When somebody use /uhoh command, run this code.
     @commands.command(description=Messages.uhoh_brief)
     async def uhoh(self, ctx):
         global uhoh_counter
