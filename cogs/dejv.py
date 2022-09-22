@@ -15,6 +15,9 @@ class Dejv(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message: Message):
+
+        nalezeno = False
+        
         """
         When message with specific content from activation_strings
         is detected the bot sends response.
