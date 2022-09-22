@@ -40,7 +40,7 @@ class Dejv(commands.Cog):
 
             if nalezeno:
                 await message.reply("VUT IS ani Dejv nespraví " + SADVID_EMOTE_ID_STRING)
-                
+
             else:
                 with open(DEJV_IMAGE_ROUTE, "rb") as f:
                     await message.reply(
