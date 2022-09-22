@@ -3,8 +3,6 @@ from disnake.ext import commands
 
 
 class PingCommand(commands.Cog):
-    """This will be for a ping command."""
-
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
