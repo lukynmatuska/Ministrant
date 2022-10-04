@@ -2,8 +2,10 @@ from disnake import ApplicationCommandInteraction
 from disnake.ext import commands, tasks
 from config.messages import Messages
 from datetime import time, datetime
+import os
+from dotenv import load_dotenv
 
-modlitebna_room = 961304110274056212
+load_dotenv(dotenv_path="./config/.env")
 
 
 class Praying(commands.Cog):
@@ -19,7 +21,7 @@ class Praying(commands.Cog):
 
     @tasks.loop(time=time(7, 0, tzinfo=local_tz))
     async def send_pray(self):
-        modlitebna = self.bot.get_channel(modlitebna_room)
+        modlitebna = self.bot.get_channel(os.getenv("modlitebna"))
         await modlitebna.send(Messages.pray_string)
 
 
