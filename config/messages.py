@@ -4,5 +4,5 @@ class Messages:
     
     uhoh_brief = "Ukáže počet uhoh od spuštění."
     
-    activation_strings = ["zavoláme dejva", "zavolame dejva", "zavoláme na to dejva", "zavolame na to dejva","na to zavolame dejva", "hej, dejve!", "dejve, pojd to opravit"]
+    activation_strings = ["zavoláme dejva", "zavolame dejva", "zavoláme na to dejva", "zavolame na to dejva", "hej, dejve!", "dejve, pojd to opravit","zavolat dejva"]
     dejv_repair_strings = ["Přicházá Dejv a jde to opravit", "Zde jde Dave, naše spása", "Uhněte z cesty, přichází Dejv", "Znáte Dejva, všechno spraví!"]
