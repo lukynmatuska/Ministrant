@@ -4,10 +4,6 @@ from disnake.ext import commands
 from config.messages import Messages
 
 DEJV_IMAGE_ROUTE = "./assets/dejvOpravar.png"
-VUTIS_STRINGS = ["vutis", "vut is", "studis"]
-SADVID_EMOTE_ID_STRING = "<:sadvid:976410247105241098>"
-
-# class definition
 
 
 class Dejv(commands.Cog):
@@ -16,13 +12,12 @@ class Dejv(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message: Message):
-
-        nalezeno = False
-
         """
         When message with specific content from activation_strings
         is detected the bot sends response.
         """
+
+        nalezeno = False
 
         for string in Messages.activation_strings:
             if string in message.content.lower():
@@ -33,13 +28,13 @@ class Dejv(commands.Cog):
 
             nalezeno = False
 
-            for string in VUTIS_STRINGS:
+            for string in Messages.vutis_strings:
                 if string in message.content.lower():
                     nalezeno = True
                     break
 
             if nalezeno:
-                await message.reply("VUT IS ani Dejv nespraví " + SADVID_EMOTE_ID_STRING)
+                await message.reply(Messages.dejv_vut_is)
 
             else:
                 with open(DEJV_IMAGE_ROUTE, "rb") as f:

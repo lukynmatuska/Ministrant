@@ -6,6 +6,9 @@ class Messages:
 
     activation_strings = ["zavoláme dejva", "zavolame dejva", "zavoláme na to dejva", "zavolame na to dejva", "hej, dejve!", "dejve, pojd to opravit","zavolat dejva"]
     dejv_repair_strings = ["Přicházá Dejv a jde to opravit", "Zde jde Dave, naše spása", "Uhněte z cesty, přichází Dejv", "Znáte Dejva, všechno spraví!"]
+    vutis_strings = ["vutis", "vut is", "studis"]
+    dejv_vut_is = "VUT IS ani Dejv nespraví <:sadvid:976410247105241098>"
+
     oversleep_word = "zaspal"
     fest_string = "fest"
     fest_brief = "Vrací pocet pouziti \"fest\" od spusteni."
