@@ -22,7 +22,6 @@ bot = commands.Bot(
     command_prefix=";",
     intents=Intents.all(),
     activity=Game(name="Modlení"),
-    test_guilds=[828675132365078618],
 )
 
 
