@@ -1,13 +1,10 @@
-# Import the necessary libraries.
 from disnake import ApplicationCommandInteraction, File, Message
 from disnake.ext import commands
+from config.messages import Messages
 
-# Setup global variables
 fest_counter = 0
-FEST_STRING = "fest"
 ARII_DISCORD_ID = 282207827332694017
 ARII_SLEEPING_IMAGE = "./assets/sleepingAri.png"
-OVERSLEEP_WORD = "zaspal"
 
 
 class Arii(commands.Cog):
@@ -21,7 +18,7 @@ class Arii(commands.Cog):
         global fest_counter
 
         # Send notification when oversleep
-        if message.author.id == ARII_DISCORD_ID and OVERSLEEP_WORD in message.content.lower():
+        if message.author.id == ARII_DISCORD_ID and Messages.oversleep_word in message.content.lower():
             with open(ARII_SLEEPING_IMAGE, "rb") as f:
                 await message.reply(
                     file=File(
@@ -32,22 +29,20 @@ class Arii(commands.Cog):
 
         # Count in fest word
         if (
-            FEST_STRING in message.content.lower()
+            Messages.fest_string in message.content.lower()
             and message.author.id != self.bot.user.id
             and not message.author.bot
         ):
-            await message.reply(FEST_STRING)
+            await message.reply(Messages.fest_string)
             fest_counter += 1
 
     # When somebody use /fest command, run this code.
     @commands.slash_command(
-            description=f"Vraci pocet pouziti \"{FEST_STRING}\" od spusteni."
+            description=Messages.fest_brief
     )
     async def fest(self, inter: ApplicationCommandInteraction):
-        # Use global variables
         global fest_counter
-        await inter.response.defer()
-        await inter.followup.send(f"Pocet pouziti \"{FEST_STRING}\" od meho spusteni je {fest_counter}.")
+        await inter.send(Messages.fest_count.format(fest_counter=fest_counter))
 
 
 def setup(bot: commands.Bot):
