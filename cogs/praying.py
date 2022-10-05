@@ -21,7 +21,7 @@ class Praying(commands.Cog):
 
     @tasks.loop(time=time(7, 0, tzinfo=local_tz))
     async def send_pray(self):
-        modlitebna = self.bot.get_channel(os.getenv("modlitebna"))
+        modlitebna = self.bot.get_channel(os.getenv("modlitebna_room"))
         await modlitebna.send(Messages.pray_string)
 
 
