@@ -19,9 +19,9 @@ class Praying(commands.Cog):
     async def pray(self, inter: ApplicationCommandInteraction):
         await inter.send(Messages.pray_string)
 
-    @tasks.loop(time=time(7, 0, tzinfo=local_tz))
+    @tasks.loop(time=time(int(os.getenv("PRAYING_HOUR")), int(os.getenv("PRAYING_MINUTE")), tzinfo=local_tz))
     async def send_pray(self):
-        modlitebna = self.bot.get_channel(os.getenv("modlitebna_room"))
+        modlitebna = self.bot.get_channel(int(os.getenv("MODLITEBNA_ROOM")))
         await modlitebna.send(Messages.pray_string)
 
 
