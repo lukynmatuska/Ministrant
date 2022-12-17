@@ -3,6 +3,9 @@ class Messages:
     pray_brief = "Ministrant se pomodlí."
 
     uhoh_brief = "Ukáže počet uhoh od spuštění."
+    
+    hej_brief = "Ukáže počet hej od spuštění."
+    hou_brief = "Ukáže počet hou od spuštění."
 
     activation_strings = ["zavoláme dejva", "zavolame dejva", "zavoláme na to dejva", "zavolame na to dejva", "hej, dejve!", "dejve, pojd to opravit","zavolat dejva"]
     dejv_repair_strings = ["Přicházá Dejv a jde to opravit", "Zde jde Dave, naše spása", "Uhněte z cesty, přichází Dejv", "Znáte Dejva, všechno spraví!"]
