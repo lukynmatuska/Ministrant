@@ -16,3 +16,5 @@ class Messages:
     fest_string = "fest"
     fest_brief = "Vrací pocet pouziti \"fest\" od spusteni."
     fest_count = "Pocet pouziti **fest** od meho spusteni je **{fest_counter}**."
+    
+    today_nepal_brief = "Vypíše dnešní nabídku v Nepálu."
