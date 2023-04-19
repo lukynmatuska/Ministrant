@@ -21,8 +21,7 @@ class Nepal(commands.Cog):
 
     def get_today_nepal_menu(self):
         self.refresh_cucin_api_response()
-        if type(self.cucin_api_response) != type({}):
-            print(type(self.cucin_api_response),self.cucin_api_response)
+        if not isinstance(self.cucin_api_response, dict):
             print("Response from API is not a JSON, ending.", file=sys.stderr)
             exit(1)
 
@@ -31,7 +30,10 @@ class Nepal(commands.Cog):
             exit(1)
 
         if "dishes" not in self.cucin_api_response["restaurants"]["nepal"].keys():
-            print("There are not 'dishes' in nepal restaurant JSON response from API, ending.", file=sys.stderr)
+            print(
+                "There are not 'dishes' in nepal restaurant JSON response from API, ending.",
+                file=sys.stderr
+            )
             exit(1)
 
         return self.cucin_api_response["restaurants"]["nepal"]["dishes"]
@@ -57,7 +59,6 @@ class Nepal(commands.Cog):
             # content=nepal_menu_text,
             embed=nepal_embed
         )
-
 
 
 def setup(bot: commands.Bot):
